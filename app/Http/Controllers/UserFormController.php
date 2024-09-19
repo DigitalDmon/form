@@ -29,6 +29,21 @@ class UserFormController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
+            'age' => ['required', 'integer'],
+            'gender' => ['required'],
+            'countryResidence' => ['required'],
+            'countryNationality' => ['required'],
+            'theme' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirmation' => ['required', 'string', 'min:8'],
+            'phoneNumber' => ['required'],
+            'observations' => ['max:255']
+        ]);
+
         $userForm = new UserForm();
         $userForm->name = $request->input('name');
         $userForm->last_name = $request->input('lastName');
