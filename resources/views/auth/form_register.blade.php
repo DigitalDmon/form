@@ -14,9 +14,7 @@
 @enderror
 
 <div class="radio-group">
-    <div>
-        <label>Sex (Gender):</label>
-    </div>
+    <div><label>Sex (Gender):</label></div>
     <div class="radio-option">
         <input type="radio" id="masculine" name="gender" value="masculine">
         <label for="masculine">Masculine</label>
@@ -34,13 +32,31 @@
 <p class="text-xs text-red-500">{{ $message }}</p>
 @enderror
 
-<input type="text" id="countryResidence" name="countryResidence" placeholder="Residence country" value="{{ old('countryResidence') }}" class="pl-2">
+<select id="countryResidence" name="countryResidence">
+    <option value="">Country of residence</option>
+    @if(isset($countries) && count($countries) > 0)
+        @foreach ($countries as $country)
+            <option value="{{ $country['country_name'] }}">{{ $country['country_name'] }}</option>
+        @endforeach
+    @else
+        <option value="">No se encontraron países.</option>
+    @endif
+</select>
 @error('countryResidence')
 <p class="text-xs text-red-500">{{ $message }}</p>
 @enderror
 
-<input type="text" id="countryNationality" name="countryNationality" placeholder="Nationality (country)" value="{{ old('countryNationality') }}" class="pl-2">
-@error('nationality')
+<select id="countryNationality" name="countryNationality">
+    <option value="">Country of nationality</option>
+    @if(isset($countries) && count($countries) > 0)
+        @foreach ($countries as $country)
+            <option value="{{ $country['country_name'] }}">{{ $country['country_name'] }}</option>
+        @endforeach
+    @else
+        <option value="">No se encontraron países.</option>
+    @endif
+</select>
+@error('countryNationality')
 <p class="text-xs text-red-500">{{ $message }}</p>
 @enderror
 

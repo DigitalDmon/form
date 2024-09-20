@@ -45,6 +45,7 @@ class UserFormController extends Controller
         ]);
 
         $userForm = new UserForm();
+
         $userForm->name = $request->input('name');
         $userForm->last_name = $request->input('lastName');
         $userForm->age = $request->input('age');
