@@ -37,7 +37,7 @@ class UserFormController extends Controller
             'countryResidence' => ['required'],
             'countryNationality' => ['required'],
             'theme' => ['required'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:user_forms'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'password_confirmation' => ['required', 'string', 'min:8'],
             'phoneNumber' => ['required'],

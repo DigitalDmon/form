@@ -16,21 +16,25 @@
 <div class="radio-group">
     <div><label>Sex (Gender):</label></div>
     <div class="radio-option">
-        <input type="radio" id="masculine" name="gender" value="masculine">
+        <input type="radio" id="masculine" name="gender" value="masculine"
+            {{ old('gender') == 'masculine' ? 'checked' : '' }}>
         <label for="masculine">Masculine</label>
     </div>
     <div class="radio-option">
-        <input type="radio" id="feminine" name="gender" value="feminine">
+        <input type="radio" id="feminine" name="gender" value="feminine"
+            {{ old('gender') == 'feminine' ? 'checked' : '' }}>
         <label for="feminine">Feminine</label>
     </div>
     <div class="radio-option">
-        <input type="radio" id="other" name="gender" value="other" checked>
+        <input type="radio" id="other" name="gender" value="other"
+            {{ old('gender') == 'other' ? 'checked' : '' }}>
         <label for="other">Other</label>
     </div>
 </div>
 @error('gender')
 <p class="text-xs text-red-500">{{ $message }}</p>
 @enderror
+
 
 <select id="countryResidence" name="countryResidence">
     <option value="">Country of residence</option>
@@ -76,7 +80,7 @@
 @enderror
 
 <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Password confirmation" value="{{ old('password_confirmation') }}" class="pl-2">
-@error('password_confirmation')
+@error('password')
 <p class="text-xs text-red-500">{{ $message }}</p>
 @enderror
 
