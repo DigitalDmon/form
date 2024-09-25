@@ -39,12 +39,7 @@
         </div>
     </div>
     <div class="border-t border-gray-700 flex flex-col md:flex-row justify-around items-center py-2">
-        <p class="text-sm">&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
-        <nav class="nav-footer">
-            <ul class="flex space-x-4">
-                <li><Link href="#" class="text-sm hover:text-white transition-colors">Política de Privacidad<Link></li>
-                <li><Link href="#" class="text-sm hover:text-white transition-colors">Términos y Condiciones<Link></li>
-            </ul>
-        </nav>
+        <p class="text-sm">&copy; {{ date('Y') }} iTECH. All rights reserved. </p>
+        <p>Sitio creado por Agencia Intl Shark</p>
     </div>
 </div>
